@@ -43,12 +43,6 @@
 #----------------------------------------------------------------------- 
 # Edit the following lines to meet your needs
 
-# Path to install the headerfiles
-INCLUDE_PATH = /usr/include/hashlib++
-
-# Path to install the library
-LIB_PATH = /usr/local/lib/
-
 # Compiler to use
 COMPILER = g++
 
@@ -161,23 +155,7 @@ LIB:		MD5 SHA1 SHA256
 		ar rs libhl++.a $(MD5) $(SHA1) $(SHA256) $(SHA2EXT) $(CORE)
 
 #----------------------------------------------------------------------- 
-#Installing the lib
-install:	all 
-		mkdir -p $(INCLUDE_PATH); \
-		mkdir -p $(LIB_PATH); \
-		cp libhl++.a $(LIB_PATH) && \
-		cp $(HEADER) $(INCLUDE_PATH)
-		-@ echo ""
-		-@ echo ""
-		-@ echo "------------------------------"
-		-@ echo ""
-		-@ echo "hashlib++ has been installed to:"
-		-@ echo "include files: $(INCLUDE_PATH)"
-		-@ echo "library files: $(LIB_PATH)"
-		-@ echo ""
-		-@ echo "------------------------------"
 
-#----------------------------------------------------------------------- 
 # Cleaning object-files
 
 clean:
