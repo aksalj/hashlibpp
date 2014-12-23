@@ -17,25 +17,27 @@ By now hashlib++ supports the following functions:
 Run and/or modify `build.sh` to build and use hashlib++
 
 ##Sample usage
-	#include <hashlibpp.h>
- 	#include <string>
- 	#include <iostream>  //for "cerr"
-  
- 	//creating a wrapper object 
- 	hashwrapper *myWrapper = new md5wrapper();
-	 
-	try{
-		// create a hash from a string
-	    std::string hash1 = myWrapper->getHashFromString("Hello World");
-	    
-	    // create a hash based on a file
-        std::string hash2 = myWrapper->getHashFromFile("README.md");
-        
-	}catch(hlException &e) {
-	 	std::cerr << "Error("  << e.error_number() << "): " << e.error_message() << std::endl;
-	}
-	
-	delete myWrapper;
+```cpp
+#include <hashlibpp.h>
+#include <string>
+#include <iostream>  //for "cerr"
+
+//creating a wrapper object 
+hashwrapper *myWrapper = new md5wrapper();
+ 
+try{
+	// create a hash from a string
+	std::string hash1 = myWrapper->getHashFromString("Hello World");
+    
+    // create a hash based on a file
+	std::string hash2 = myWrapper->getHashFromFile("README.md");
+
+}catch(hlException &e) {
+ 	std::cerr << "Error("  << e.error_number() << "): " << e.error_message() << std::endl;
+}
+
+delete myWrapper;
+```
 
 #Just give it a try.
 
